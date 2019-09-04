@@ -1,0 +1,6 @@
+# *.pt
+.idea
+data/Main/*.txt
+data/Annatations
+data/Images
+data/Main
