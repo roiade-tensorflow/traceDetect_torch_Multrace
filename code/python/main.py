@@ -19,7 +19,8 @@ if __name__ == '__main__':
 
 
     a=iter(data_loader)
-    for i in range(len(a)):
+    lossAll=[]
+    for iteration in range(len(a)):
         im,an=next(a)
 
         im=im.float()
@@ -38,11 +39,21 @@ if __name__ == '__main__':
 
 
         out=net(im)
-        print('out size',out.size())
+        # print('out size',out.size())
         loss,dif,diff2=loss_func(out,targets)
 
         opt_Adam.zero_grad()
         loss.backward()
         opt_Adam.step()
+        if iteration%20 ==0 :
+            print('第%d次,总损失:%f,航迹损失:%f, 噪声损失d%f',iteration,loss,dif,diff2)
 
-        print(loss,dif,diff2)
+        lossAll.append(loss)
+        if iteration % 10 == 0:
+            print('loss:', loss, 'diffrence:', dif, 'diff2', diff2)
+        if loss < lossmin:
+            lossmin = loss
+            net_save = net
+        if iteration % 100 == 0:
+            print('saving model ......')
+            torch.save(net_save.state_dict(), 'net_save.pth')
