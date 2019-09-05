@@ -34,7 +34,7 @@ class myDaDetection(data.Dataset):
             tracenum=np.random.uniform(low=low_random,high=int((1+self.randomrange)*self.traceNum))
 
             tracenum=int(tracenum)
-        print(tracenum)
+        # print(tracenum)
         nose=self.data.noseProdece_mul(noseNumber=self.noseNum)
         trace=self.data.traceProduce_mul(traceNum=tracenum)
         im=torch.cat((trace,nose),dim=0)
