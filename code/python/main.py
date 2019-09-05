@@ -7,12 +7,13 @@ import sys
 
 if __name__ == '__main__':
     net=CnnNet()
+    net.load_state_dict(torch.load('../../nnModel/weight/net_save_200nose.pth'))
 
-    opt_Adam = torch.optim.Adam(net.parameters(), lr=0.01, betas=(0.9, 0.99))
+    opt_Adam = torch.optim.Adam(net.parameters(), lr=0.003, betas=(0.9, 0.99))
     loss_func=MyLoss()
 
     data_=myDaDetection(sizeFig=256,
-                        _time=5,figNum=10000,noseNum=200,
+                        _time=5,figNum=100000,noseNum=200,
                         traceNum=8,traceRandom=True,
                         randomrange=0.5)
     data_loader = data.DataLoader(data_, 5,)

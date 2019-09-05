@@ -19,7 +19,7 @@ if __name__ == '__main__':
     a=iter(data_loader)
     lossAll=[]
     lossmin = 10000
-    net.load_state_dict(torch.load('./weight/net_save.pth'))
+    net.load_state_dict(torch.load('./weight/net_save_200nose.pth'))
     im, an = next(a)
 
     im = im.float()
@@ -39,7 +39,7 @@ if __name__ == '__main__':
 
     yy=yy.cpu().detach().numpy()
 
-    dirTa = np.where(yy > 0.2)
+    dirTa = np.where(yy > 0.88)
     targetsFromNet=np.zeros_like(yy)
     targetsFromNet[dirTa[0],dirTa[1],dirTa[2],dirTa[3],dirTa[4]]=1
     imagesForDectet = im.cpu().detach().numpy()
