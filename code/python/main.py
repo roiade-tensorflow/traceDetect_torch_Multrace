@@ -19,7 +19,10 @@ if __name__ == '__main__':
 
 
     a=iter(data_loader)
+
     lossAll=[]
+    lossmin = 10000
+    net_save = net
     for iteration in range(len(a)):
         im,an=next(a)
 
