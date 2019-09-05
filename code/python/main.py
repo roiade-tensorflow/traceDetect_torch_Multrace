@@ -7,7 +7,7 @@ import sys
 
 if __name__ == '__main__':
     net=CnnNet()
-    net.load_state_dict(torch.load('../../nnModel/weight/net_save_200nose.pth'))
+    net.load_state_dict(torch.load('net_save_200nose.pth'))
 
     opt_Adam = torch.optim.Adam(net.parameters(), lr=0.003, betas=(0.9, 0.99))
     loss_func=MyLoss()
