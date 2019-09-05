@@ -115,6 +115,8 @@ class traceImageProduce():
         noseSave[:,0:2]=RecToPolar(noseSave[:,0:2])
         return noseSave
 
+
+
     def saveDataFuc(self,txtName,openModel='a',randomTraceNum=True,traceNum=2):
         import os
         if not os.path.exists(self.dataName,):
@@ -123,7 +125,6 @@ class traceImageProduce():
             fileDir = open(self.dataName + txtName, 'w')
         else:
             fileDir = open(self.dataName+txtName,openModel)
-
 
     def traceProduce(self):
         '''
