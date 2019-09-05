@@ -16,7 +16,7 @@ if __name__ == '__main__':
                         _time=5,figNum=100000,noseNum=200,
                         traceNum=8,traceRandom=True,
                         randomrange=0.5)
-    data_loader = data.DataLoader(data_, 5,)
+    data_loader = data.DataLoader(data_,batch_size=1)
 
 
     a=iter(data_loader)

@@ -39,7 +39,7 @@ if __name__ == '__main__':
 
     yy=yy.cpu().detach().numpy()
 
-    dirTa = np.where(yy > 0.88)
+    dirTa = np.where(yy > 0.93)
     targetsFromNet=np.zeros_like(yy)
     targetsFromNet[dirTa[0],dirTa[1],dirTa[2],dirTa[3],dirTa[4]]=1
     imagesForDectet = im.cpu().detach().numpy()

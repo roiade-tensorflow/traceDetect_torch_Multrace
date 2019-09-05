@@ -48,7 +48,7 @@ class CnnNet(nn.Module):
 
     def forward(self, x):
         out = self.conv3d_1(x)
-        # print(out.size())
+        print(out.size())
         out=self.maxpool_1(out)
         out=self.conv3d_2(out)
         out=self.maxpool_1(out)
@@ -97,7 +97,7 @@ class MyLoss(nn.Module):
         for i in range(len(torch.tensor(pre.size()))):
             num *= pre.size()[i]
         c = torch.pow(label - pre, 2)
-        d = torch.pow((10) * (label - pre) * label, 2)
-        f = torch.sum(c +d)#总损失
-        g=torch.sum(torch.pow((label - pre) * label, 2))#找出
+        d = torch.pow((40) * (label - pre) * label, 2)
+        f = torch.sum(c +d)#zon
+        g=torch.sum(torch.pow((label - pre) * label, 2))
         return f,g,torch.sum(c)
