@@ -1,4 +1,5 @@
-# *.pt
+*.pt
+*.pth
 .idea
 data/Main/*.txt
 data/Annatations

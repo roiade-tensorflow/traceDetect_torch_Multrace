@@ -12,10 +12,10 @@ if __name__ == '__main__':
     loss_func=MyLoss()
 
     data_=myDaDetection(sizeFig=256,
-                        _time=5,figNum=10000,noseNum=20,
+                        _time=5,figNum=10000,noseNum=200,
                         traceNum=8,traceRandom=True,
                         randomrange=0.5)
-    data_loader = data.DataLoader(data_, 1,)
+    data_loader = data.DataLoader(data_, 5,)
 
 
     a=iter(data_loader)
