@@ -58,6 +58,6 @@ if __name__ == '__main__':
         if loss < lossmin:
             lossmin = loss
             net_save = net
-        if iteration % 100 == 0:
+            print('saveing ...  loss:', loss, 'diffrence:', dif, 'diff2', diff2)
             print('saving model ......')
             torch.save(net_save.state_dict(), 'net_save.pth')
