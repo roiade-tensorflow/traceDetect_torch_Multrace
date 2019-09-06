@@ -24,6 +24,8 @@ def imageShow2(imageNose ,imageEval,imageLable,scale=2):
     dirEval=np.where(dataEval>0)
     dirLabel=np.where(dataLabel>0)
 
+
+
     axNose=plt.axes([0,0,0.5,0.5])
     axEval=plt.axes([0,0.5,0.5,0.5])
     axLabel=plt.axes([0.5,0.5,0.5,0.5])
