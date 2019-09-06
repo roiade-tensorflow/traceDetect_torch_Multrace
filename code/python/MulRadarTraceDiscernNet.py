@@ -74,9 +74,13 @@ class My_loss(nn.Module):
 
     def forward(self, x, y):  # 定义前向的函数运算即可
         x=torch.exp(-x)
-        x=1/(1+x)
+        x=torch.ones_like(x)+x
+        x=torch.div(torch.ones_like(x),x)
         y=torch.exp(-y)
-        y=1/(1+y)
+
+        y=torch.ones_like(y)+y
+        y=torch.div(torch.ones_like(y),y)
+
         d = -(y * torch.log(x) + (1 - y) * torch.log(1 - x))
         return torch.sum(d)
         # return torch.sum(100*torch.pow((x - y)*y, 2)+torch.pow((x - y), 2))
