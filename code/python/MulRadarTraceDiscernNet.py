@@ -48,7 +48,7 @@ class CnnNet(nn.Module):
 
     def forward(self, x):
         out = self.conv3d_1(x)
-        print(out.size())
+        # print(out.size())
         out=self.maxpool_1(out)
         out=self.conv3d_2(out)
         out=self.maxpool_1(out)
