@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
     data_=myDaDetection(sizeFig=256,
                         _time=5,figNum=100000,noseNum=200,
-                        traceNum=8,traceRandom=True,
+                        traceNum=2,traceRandom=False,
                         randomrange=0.5)
     data_loader = data.DataLoader(data_,batch_size=1)
 
